@@ -1,40 +1,35 @@
-# 🧠 Brain Tumor Detection Using YOLOv5
+# Brain Tumor Detection and Classification using YOLOv5 🎯🧠
 
-This repository presents a deep learning-based object detection model for identifying and localizing brain tumors from MRI scans using an enhanced YOLOv5 architecture. The project focuses on classifying three tumor types—**glioma**, **meningioma**, and **pituitary tumor**—using high-resolution annotated MRI images.
+This repository contains the code and documentation for my B.Tech Practice School project at Manipal Institute of Technology, titled **"Brain Tumor Detection and Classification using YOLOv5"**. The project explores the use of deep learning and object detection—specifically YOLOv5—for real-time brain tumor detection and classification using MRI scans.
 
-## 🚀 Overview
+## 🧪 Problem Statement
+Brain tumors are life-threatening and require early detection for effective treatment. Manual inspection of MRI scans by radiologists is time-consuming and error-prone due to inter-observer variability and fatigue. This project aims to develop a fast and accurate AI-based detection system to classify three major types of brain tumors:
+- **Glioma**
+- **Meningioma**
+- **Pituitary Tumor**
 
-The model is built on YOLOv5s and incorporates:
-- 🔲 **SPP (Spatial Pyramid Pooling)** for multi-scale feature representation
-- 🎯 **ESA (Enhanced Spatial Attention)** for spatial region focus
-- 📦 **SE (Squeeze-and-Excitation)** for channel-wise recalibration
-- 🔧 **Hyperparameter tuning with Optuna (Bayesian Optimization)**
+## 💡 Objective
+To build an optimized YOLOv5-based object detection model capable of:
+- Accurately identifying and localizing tumors in MRI scans.
+- Enhancing detection performance through architectural modifications.
+- Ensuring practical deployment via improved speed-accuracy trade-off.
 
-The final model achieves:
-- **mAP@0.5:** `0.934`
-- **Precision:** `0.924`
-- **Recall:** `0.883`
-- **Inference speed:** ~8.4 ms/image
+## 📂 Dataset
+The dataset used for this project is the [**Medical Image Dataset: Brain Tumor Detection**](https://www.kaggle.com/datasets/pkdarabi/medical-image-dataset-brain-tumor-detection/data) made available via Kaggle. It contains:
+- **3,903 MRI images** labeled with bounding boxes and class information.
+- Four classes: **Glioma**, **Meningioma**, **Pituitary Tumor**, and **No Tumor**.
+- All images were annotated with precise bounding boxes and later converted to YOLOv5-compatible format.
 
-## 📊 Dataset
+## 🧠 Methodology
+- **Baseline Model**: YOLOv5s trained on the converted dataset.
+- **Architecture Enhancements**: Incorporated Spatial Pyramid Pooling (SPP), Enhanced Spatial Attention (ESA), and Squeeze-and-Excitation (SE) modules.
+- **Hyperparameter Tuning**: Conducted using the **Optuna** framework with Bayesian optimization.
+- **Custom Evaluation Metric**: Introduced **Performance-Speed Ratio (PSR)** to evaluate detection accuracy vs inference speed.
 
-Name: Medical Image Dataset - Brain Tumor Detection
 
-Source: Kaggle Dataset by pkdarabi
-
-Size: ~3,900 images
-
-Modality: T1-weighted MRI scans
-
-Classes:
-
-0 – Glioma
-
-1 – Meningioma
-
-2 – Pituitary Tumor
-
-3 – No Tumor
-
-Label Format: Converted from YOLOv8 to YOLOv5 (.txt with normalized bounding boxes)
+## ⚙️ Tech Stack
+- **Framework**: [YOLOv5 by Ultralytics](https://github.com/ultralytics/yolov5)
+- **Language**: Python 3.11
+- **Libraries**: PyTorch, OpenCV, NumPy, Optuna, Matplotlib
+- **Hardware**: NVIDIA RTX 3060 GPU (12GB VRAM)
 
